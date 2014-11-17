@@ -11,7 +11,7 @@
 
   <div>
     <%= form.label :kitchen %>
-    <%= form.check_box :kitchen %>
+    <%= form.check_box :kitchen, {}, "true", "false" %>
   </div>
 
   <div>
@@ -25,6 +25,6 @@
   </div>
 
   <div>
-    <%= form.submit "Sign in" %>
+    <%= form.submit %>
   </div>
 <% end %>
