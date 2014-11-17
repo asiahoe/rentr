@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141117210003) do
     t.string   "number_of_room",                 null: false
     t.string   "description",                    null: false
     t.integer  "user_id",                        null: false
+    t.string   "url",                            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

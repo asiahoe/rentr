@@ -7,6 +7,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :number_of_room, null: false
       t.string :description, null: false
       t.references :user, null: false
+      t.string :url, null: false
 
       t.timestamps
     end
