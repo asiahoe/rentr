@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   constraints Monban::Constraints::SignedIn.new do
-    root "sessions#new", as: :home
+    root "dashboards#show", as: :home
   end
 
   constraints Monban::Constraints::SignedOut.new do
