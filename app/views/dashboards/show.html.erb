@@ -1,1 +1,7 @@
 <h1><%= current_user.name %>'s Dashboard</h1>
+
+<h3><%= link_to "New Listing", new_listing_path %></h3>
+
+<ul>
+  <%= render partial: "listing", collection: current_user.listings %>
+</ul>
