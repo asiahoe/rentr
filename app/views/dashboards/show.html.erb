@@ -1,1 +1,14 @@
 <h1><%= current_user.name %>'s Dashboard</h1>
+
+<h3><%= link_to "New Listing", new_listing_path %></h3>
+
+<ul>
+  <% current_user.listings.each do |listing| %>
+    <li>
+      <p><%= image_tag listing.image_url, width: 200 %></p>
+      <p><%= listing.name %></p>
+      <p><%= listing.price %></p>
+      <p><%= link_to "Edit Listing", edit_listing_path(listing) %></p>
+    </li>
+  <% end %>
+</ul>
