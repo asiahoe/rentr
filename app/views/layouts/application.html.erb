@@ -2,20 +2,32 @@
 <html>
 <head>
   <title>Rentr</title>
+  <meta charset="utf-8">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="//use.typekit.net/nrc2kuk.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-
-<% if signed_in? %>
-  <%= link_to "Sign out", session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign in", new_session_path %>
-  <%= link_to "Sign up", new_user_path %>
-<% end %>
-
-<%= yield %>
-
+  <div class="full">
+    <header class="container">
+      <h1 class="logotype"><a href="#">Rentr</a></h1>
+      <% if signed_in? %>
+        <ul class="active">
+          <li><%= link_to "Log Out", session_path, method: :delete %></li>
+        </ul>
+      <% else %>
+        <ul class="inactive">
+          <li><%= link_to "Sign Up", new_user_path %></li>
+          <li><%= link_to "Sign In", new_session_path %></li>
+        </ul>
+      <% end %>
+    </header>
+  </div>
+  <main class="container">
+    <%= yield %>
+    <script src="http://localhost:35729/livereload.js"></script>
+  </main>
 </body>
 </html>

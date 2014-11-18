@@ -1,7 +1,8 @@
 // Typography
 $sans-serif: $helvetica;
 $serif: $georgia;
-$base-font-family: $sans-serif;
+$rounded: "proxima-nova", $sans-serif;
+$base-font-family: $rounded;
 $header-font-family: $base-font-family;
 
 // Font Sizes
@@ -23,7 +24,7 @@ $base-spacing: $base-line-height * 1em;
 $base-z-index: 0;
 
 // Colors
-$blue: #477DCA;
+$blue: #3498DB;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #DDD;
