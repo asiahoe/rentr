@@ -1,3 +1,5 @@
-<div class="image"><%= image_tag listing.image_url, width: 200 %></div>
+<div class="image">
+  <%= link_to (image_tag listing.image_url, width: 200), listing %>
+</div>
 <p>Name: <%= listing.name %></p>
 <p>Price: <%= listing.price %></p>
