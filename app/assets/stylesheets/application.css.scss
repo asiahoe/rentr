@@ -22,7 +22,7 @@ body {
 }
 
 header {
-  
+
   ul {
     margin-top: 1em;
     text-align: right;
@@ -47,4 +47,17 @@ header {
   a {
     color: #FFF;
   }
+}
+
+form {
+
+  @include media($medium-screen) {
+    @include span-columns (2 of 4);
+    @include shift(1);
+  }
+
+}
+
+.field_with_errors input {
+  border: 1px solid $error-color;
 }
