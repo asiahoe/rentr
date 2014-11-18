@@ -2,3 +2,49 @@
 @import "base/grid-settings";
 @import "neat";
 @import "base/base";
+
+body {
+  margin: 0;
+}
+
+.full {
+  background-color: #3498db;
+  min-width: 100%;
+}
+
+.container {
+  @include outer-container;
+  @include pad(2em);
+}
+
+.logotype {
+  @include span-columns(2 of 4);
+}
+
+header {
+  
+  ul {
+    margin-top: 1em;
+    text-align: right;
+    vertical-align: bottom;
+
+    &.active {
+
+      li {
+        @include span-columns(1 of 4);
+        @include shift(1);
+      }
+    }
+
+    &.inactive {
+
+      li {
+        @include span-columns(1 of 4);
+      }
+    }
+  }
+
+  a {
+    color: #FFF;
+  }
+}
