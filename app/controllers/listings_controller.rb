@@ -7,7 +7,28 @@ class ListingsController < ApplicationController
     listing = current_user.listings.build(listing_params)
 
     if listing.save
-      redirect_to root_path
+      redirect_to listing
+    else
+      redirect_to :back
+    end
+  end
+
+  def index
+    @listings = Listing.all
+  end
+
+  def show
+    @listing = Listing.find(params[:id])
+  end
+
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+    if @listing.update(listing_params)
+      redirect_to @listing
     else
       redirect_to :back
     end
@@ -22,7 +43,7 @@ class ListingsController < ApplicationController
     :kitchen,
     :price,
     :description,
-    :url
+    :image_url
     )
   end
 end
