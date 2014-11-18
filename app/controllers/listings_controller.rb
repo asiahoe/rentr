@@ -13,6 +13,27 @@ class ListingsController < ApplicationController
     end
   end
 
+  def index
+    @listings = Listing.all
+  end
+
+  def show
+    @listing = Listing.find(params[:id])
+  end
+
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+    if @listing.update(listing_params)
+      redirect_to @listing
+    else
+      render :back
+    end
+  end
+
   private
 
   def listing_params
