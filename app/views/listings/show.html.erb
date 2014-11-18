@@ -22,6 +22,10 @@
   <div class="price">
     <p>price: <%= @listing.price %></p>
   </div>
+
+  <div>
+     <%= link_to "Delete!", listing_path(@listing), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
 </div>
 
 <div class="owner-params">
