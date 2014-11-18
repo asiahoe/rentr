@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
     listing = current_user.listings.build(listing_params)
 
     if listing.save
-      redirect_to root_path
+      redirect_to listing
     else
       redirect_to :back
     end
@@ -43,7 +43,7 @@ class ListingsController < ApplicationController
     :kitchen,
     :price,
     :description,
-    :url
+    :image_url
     )
   end
 end
