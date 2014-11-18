@@ -1,0 +1,31 @@
+<h1><%= @listing.name %></h1>
+
+<div class="listing-params">
+  <div class="listing-photo">
+    <%= image_tag @listing.url, width:400 %>
+  </div>
+
+  <div class="description">
+    <p>Description: <%= @listing.description %></p>
+  </div>
+
+  <div class="number-of-rooms">
+    <p>Number of room: <%= @listing.number_of_room %></p>
+  </div>
+
+  <div class="amenities">
+    <ul>Amenities
+      <li>Kitchen: <%= @listing.kitchen %></li>
+    </ul>
+  </div>
+
+  <div class="price">
+    <p>price: <%= @listing.price %></p>
+  </div>
+</div>
+
+<div class="owner-params">
+  <h3>User: <%= @listing.user.name %></h3>
+  <%= image_tag @listing.user.url, width: 200 %>
+  <p>Bio: <%= @listing.user.bio %></p>
+</div>
