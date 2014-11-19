@@ -47,7 +47,7 @@ class ListingsController < ApplicationController
 
   def check_user
     unless listing.user == current_user
-      raise User::NotAuthorized
+      render status: 401
     end
   end
 
