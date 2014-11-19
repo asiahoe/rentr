@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+  before_action :check_user, only: [:update, :edit, :destroy]
+
   def new
     @listing = Listing.new
   end
@@ -18,15 +20,16 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listing = Listing.find(params[:id])
+    listing
   end
 
   def edit
-    @listing = Listing.find(params[:id])
+    listing
   end
 
   def update
-    @listing = Listing.find(params[:id])
+    listing
+
     if @listing.update(listing_params)
       redirect_to @listing
     else
@@ -35,13 +38,18 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    listing = Listing.find(params[:id])
     listing.destroy
 
     redirect_to listings_path
   end
 
   private
+
+  def check_user
+    unless listing.user == current_user
+      raise User::NotAuthorized
+    end
+  end
 
   def listing_params
     params.require(:listing).permit(
@@ -52,5 +60,9 @@ class ListingsController < ApplicationController
     :description,
     :image_url
     )
+  end
+
+  def listing
+    @listing ||= Listing.find(params[:id])
   end
 end
