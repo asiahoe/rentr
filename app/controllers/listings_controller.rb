@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
     @listing = current_user.listings.build(listing_params)
 
     if @listing.save
-      redirect_to session[:link_back]
+      redirect_to @listing
     else
       render :new
     end
@@ -32,7 +32,7 @@ class ListingsController < ApplicationController
     listing
 
     if @listing.update(listing_params)
-      redirect_to session[:link_back]
+      redirect_to @listing
     else
       redirect_to :back
     end

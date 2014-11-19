@@ -8,8 +8,16 @@ class ApplicationController < ActionController::Base
       super || Guest.new
 
   def keep_link_back_url
-    if request.referer != new_listing_url || request.referer != update_listing_url(params[:id]) || request.referer != "listings#destroy"
+    if not_new_session?
       session[:link_back] = request.referer
     end
+  end
+
+  def current_user
+      super || Guest.new
+  end
+
+  def not_new_session?
+    request.referer != new_session_url
   end
 end
