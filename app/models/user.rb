@@ -3,4 +3,8 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
 
   has_many :listings
+
+  def owns?(listing)
+    self == listing.user
+  end
 end

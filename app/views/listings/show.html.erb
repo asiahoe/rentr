@@ -1,5 +1,10 @@
 <h1><%= @listing.name %></h1>
 
+<% if current_user.owns?(@listing) %>
+  <%= link_to "Edit", edit_listing_path(@listing) %>
+  <%= link_to "Delete", listing_path(@listing), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
 <div class="listing-params">
   <div class="listing-photo">
     <%= image_tag @listing.image_url, width:400 %>
@@ -22,14 +27,10 @@
   <div class="price">
     <p>price: <%= @listing.price %></p>
   </div>
-
-  <div>
-     <%= link_to "Delete!", listing_path(@listing), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
 </div>
 
 <div class="owner-params">
   <h3>User: <%= @listing.user.name %></h3>
-  <%= image_tag @listing.user.image_url, width: 200 %>
+  <%= link_to (image_tag @listing.user.image_url, width: 200), user_path(@listing.user) %>
   <p>Bio: <%= @listing.user.bio %></p>
 </div>
