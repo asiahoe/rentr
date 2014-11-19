@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
+  before_action :keep_link_back_url, only: [:edit, :new]
   before_action :check_user, only: [:update, :edit, :destroy]
-  before_action :keep_link_back_url, only: [:edit, :destroy, :new]
 
   def new
     @listing = Listing.new
@@ -41,7 +41,7 @@ class ListingsController < ApplicationController
   def destroy
     listing.destroy
 
-    redirect_to listings_path
+    redirect_to dashboard_path
   end
 
   private
@@ -54,6 +54,7 @@ class ListingsController < ApplicationController
 
   def listing_params
     params.require(:listing).permit(
+<<<<<<< HEAD
     :name,
     :number_of_room,
     :kitchen,
@@ -69,6 +70,14 @@ class ListingsController < ApplicationController
     :price,
     :description,
     :image_url
+=======
+      :name,
+      :number_of_room,
+      :kitchen,
+      :price,
+      :description,
+      :image_url
+>>>>>>> Delete listing function takes you back to dashboard
     )
   end
 
