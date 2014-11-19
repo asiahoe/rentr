@@ -1,6 +1,6 @@
 <h1><%= @listing.name %></h1>
 
-<% if current_user == @listing.user %>
+<% if current_user.owns?(@listing) %>
   <%= link_to "Edit", edit_listing_path(@listing) %>
   <%= link_to "Delete", listing_path(@listing), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
