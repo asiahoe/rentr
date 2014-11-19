@@ -6,5 +6,10 @@ class ApplicationController < ActionController::Base
 
   def current_user
       super || Guest.new
+
+  def keep_link_back_url
+    if request.referer != new_listing_url 
+      session[:link_back] = request.referer
+    end
   end
 end

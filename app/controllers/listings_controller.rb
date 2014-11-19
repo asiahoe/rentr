@@ -1,17 +1,18 @@
 class ListingsController < ApplicationController
   before_action :check_user, only: [:update, :edit, :destroy]
+  before_action :keep_link_back_url, only: [:edit, :destroy, :new]
 
   def new
     @listing = Listing.new
   end
 
   def create
-    listing = current_user.listings.build(listing_params)
+    @listing = current_user.listings.build(listing_params)
 
-    if listing.save
-      redirect_to listing
+    if @listing.save
+      redirect_to root_path
     else
-      redirect_to :back
+      render :new
     end
   end
 
