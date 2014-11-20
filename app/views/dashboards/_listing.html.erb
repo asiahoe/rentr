@@ -1,7 +1,13 @@
-<li>
-  <p><%= link_to (image_tag listing.image_url, width: 200), listing %></p>
-  <p><%= listing.name %></p>
-  <p><%= listing.price %></p>
-  <p><%= link_to "Edit Listing", edit_listing_path(listing) %></p>
-  <p><%= link_to "Delete Listing", listing_path(listing), method: :delete %></p>
+<li class="listing">
+  <div class="listing-photo">
+    <%= link_to (image_tag listing.image_url), listing %>
+  </div>
+  <h1><%= listing.name %></h1>
+  <div class="manage">
+    <button><%= link_to "Edit", edit_listing_path(listing) %></button>
+    <button class="delete"><%= link_to "Delete", listing_path(listing), method: :delete %></button>
+  </div>
+  <div class="price-ribbon">
+    <h2>$<%= listing.price %></h2>
+  </div>
 </li>
