@@ -20,15 +20,16 @@
 
   <div class="amenities">
     <ul>Amenities
-      <li>Kitchen: <%= raw mark@listing.kitchen? %></li>
-      <li>TV: <%= raw mark@listing.tv? %></li>
-      <li>Essentials: <%= raw mark@listing.essentials? %></li>
-      <li>Shampoo: <%= raw mark@listing.shampoo? %></li>
-      <li>Heating: <%= raw mark@listing.heating? %></li>
-      <li>Air Conditioning: <%= raw mark@listing.conditioning? %></li>
-      <li>Washer: <%= raw mark@listing.washer? %></li>
-      <li>Dryer: <%= raw mark@listing.dryer? %></li>
-      <li>Indoor Fireplace: <%= raw mark@listing.indoor_fireplace? %></li>
+      <li>Kitchen: <%= HTML_Entities @listing.kitchen %></li>
+      <li>TV: <%= HTML_Entities @listing.tv %></li>
+      <li>Internet: <%= HTML_Entities @listing.internet %></li>
+      <li>Essentials: <%= HTML_Entities @listing.essentials %></li>
+      <li>Shampoo: <%= HTML_Entities @listing.shampoo %></li>
+      <li>Heating: <%= HTML_Entities @listing.heating %></li>
+      <li>Air Conditioning: <%= HTML_Entities @listing.conditioning %></li>
+      <li>Washer: <%= HTML_Entities @listing.washer %></li>
+      <li>Dryer: <%= HTML_Entities @listing.dryer %></li>
+      <li>Indoor Fireplace: <%= HTML_Entities @listing.indoor_fireplace %></li>
     </ul>
   </div>
 

@@ -26,15 +26,15 @@ ActiveRecord::Schema.define(version: 20141119205349) do
     t.string   "image_url",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "tv"
-    t.boolean  "essentials"
-    t.boolean  "shampoo"
-    t.boolean  "heating"
-    t.boolean  "conditioning"
-    t.boolean  "washer"
-    t.boolean  "indoor_fireplace"
-    t.boolean  "dryer"
-    t.boolean  "internet"
+    t.boolean  "tv",               default: false
+    t.boolean  "essentials",       default: false
+    t.boolean  "shampoo",          default: false
+    t.boolean  "heating",          default: false
+    t.boolean  "conditioning",     default: false
+    t.boolean  "washer",           default: false
+    t.boolean  "indoor_fireplace", default: false
+    t.boolean  "dryer",            default: false
+    t.boolean  "internet",         default: false
   end
 
   create_table "users", force: true do |t|
