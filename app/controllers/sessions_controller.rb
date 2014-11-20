@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
-  before_action :keep_link_back_url, only: [:new, :create]
+  before_action :keep_link_back_url, only: [:new]
 
   def new
   end

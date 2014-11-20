@@ -8,16 +8,10 @@ class ApplicationController < ActionController::Base
       super || Guest.new
 
   def keep_link_back_url
-    if not_new_session?
-      session[:link_back] = request.referer
-    end
+    session[:link_back] = request.referer
   end
 
   def current_user
       super || Guest.new
-  end
-
-  def not_new_session?
-    request.referer != new_session_url
   end
 end
