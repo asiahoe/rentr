@@ -1,5 +1,4 @@
 class ListingsController < ApplicationController
-  before_action :keep_link_back_url, only: [:edit, :new]
   before_action :check_user, only: [:update, :edit, :destroy]
 
   def new

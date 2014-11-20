@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
   def current_user
       super || Guest.new
 
-  def keep_link_back_url
-    session[:link_back] = request.referer
+  def set_back_url
+    session[:back_link] = request.referer
   end
 
   def current_user
