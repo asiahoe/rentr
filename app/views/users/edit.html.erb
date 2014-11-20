@@ -1,0 +1,14 @@
+<h1>Edit Your Profile</h1>
+
+<%= form_for current_user do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :bio %>
+  <%= form.text_area :bio %>
+
+  <%= form.label :image_url, "Photo" %>
+  <%= form.text_field :image_url %>
+
+  <%= form.submit%>
+<% end %>

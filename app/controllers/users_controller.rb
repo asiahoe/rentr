@@ -20,6 +20,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+    current_user.update(user_params)
+
+    redirect_to current_user
+  end
+
   private
 
   def user_params
