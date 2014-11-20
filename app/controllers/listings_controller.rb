@@ -41,7 +41,7 @@ class ListingsController < ApplicationController
   def destroy
     listing.destroy
 
-    redirect_to dashboard_path
+    redirect_to home_path
   end
 
   private
