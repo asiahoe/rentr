@@ -1,5 +1,8 @@
 module ApplicationHelper
   def put_mark(boolean)
+  check_mark = "&#x2713;"
+  cross_mark = "&#x2717;"
+
     if boolean
       check_mark
     else
@@ -9,13 +12,5 @@ module ApplicationHelper
 
   def HTML_Entities(amenity)
     raw put_mark amenity
-  end
-
-  def check_mark
-    "&#x2713;"
-  end
-
-  def cross_mark
-    "&#x2717;"
   end
 end
