@@ -53,30 +53,21 @@ class ListingsController < ApplicationController
 
   def listing_params
     params.require(:listing).permit(
-<<<<<<< HEAD
-    :name,
-    :number_of_room,
-    :kitchen,
-    :internet,
-    :tv,
-    :essentials,
-    :shampoo,
-    :heating,
-    :conditioning,
-    :washer,
-    :dryer,
-    :indoor_fireplace,
-    :price,
-    :description,
-    :image_url
-=======
       :name,
       :number_of_room,
       :kitchen,
+      :internet,
+      :tv,
+      :essentials,
+      :shampoo,
+      :heating,
+      :conditioning,
+      :washer,
+      :dryer,
+      :indoor_fireplace,
       :price,
       :description,
       :image_url
->>>>>>> Delete listing function takes you back to dashboard
     )
   end
 
