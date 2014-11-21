@@ -1,10 +1,6 @@
 <h1><%= @listing.name %></h1>
 <article class="listing">
-<div class="listing-photo">
-  <%= image_tag @listing.image_url %>
-</div>
 
-<p><%= @listing.description %></p>
 
 <% if current_user.owns?(@listing) %>
   <%= link_to "Edit", edit_listing_path(@listing) %>
@@ -15,6 +11,7 @@
   <div class="listing-photo">
     <%= image_tag @listing.image_url, width:400 %>
   </div>
+<p><%= @listing.description %></p>
 <p><%= @listing.number_of_room %> Rooms</p>
 
   <div class="amenities">
