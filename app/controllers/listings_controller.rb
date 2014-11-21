@@ -53,7 +53,6 @@ class ListingsController < ApplicationController
 
   def listing_params
     params.require(:listing).permit(
-<<<<<<< HEAD
     :name,
     :number_of_room,
     :kitchen,
@@ -69,15 +68,6 @@ class ListingsController < ApplicationController
     :price,
     :description,
     :image_url
-=======
-      :name,
-      :number_of_room,
-      :kitchen,
-      :price,
-      :description,
-      :image_url
->>>>>>> Delete listing function takes you back to dashboard
-    )
   end
 
   def listing
