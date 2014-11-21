@@ -13,16 +13,18 @@
   <div class="full">
     <header class="container">
       <h1 class="logotype"><a href="/">Rentr</a></h1>
-      <% if signed_in? %>
-        <ul class="active">
-          <li><%= link_to "Log Out", session_path, method: :delete %></li>
+      <nav>
+        <ul>
+          <li><%= link_to "View Listings", listings_path %></li>
+          <% if signed_in? %>
+            <li><%= link_to "Add Listing", new_listing_path %></li>
+            <li><%= link_to "Log Out", session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+            <li><%= link_to "Sign In", new_session_path %></li>
+          <% end %>
         </ul>
-      <% else %>
-        <ul class="inactive">
-          <li><%= link_to "Sign Up", new_user_path %></li>
-          <li><%= link_to "Sign In", new_session_path %></li>
-        </ul>
-      <% end %>
+      </nav>
     </header>
   </div>
   <main class="container">

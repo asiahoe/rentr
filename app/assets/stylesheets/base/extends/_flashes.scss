@@ -12,10 +12,19 @@
   }
 }
 
-%flash-base {
+%flash-base, .flash {
   font-weight: bold;
   margin-bottom: $base-spacing / 2;
   padding: $base-spacing / 2;
+
+  @include media($medium-screen) {
+    @include span-columns(2);
+    @include shift(1);
+  }
+
+  ul {
+    margin-left: 1em;
+  }
 }
 
 %flash-alert {
@@ -23,7 +32,7 @@
   @include flash($alert-color);
 }
 
-%flash-error, .flash-error {
+%flash-error, .error {
   @extend %flash-base;
   @include flash($error-color);
 }
