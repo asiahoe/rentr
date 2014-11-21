@@ -11,21 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118164144) do
+ActiveRecord::Schema.define(version: 20141119205349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "listings", force: true do |t|
-    t.string   "name",                           null: false
-    t.integer  "price",                          null: false
-    t.boolean  "kitchen",        default: false
-    t.string   "number_of_room",                 null: false
-    t.string   "description",                    null: false
-    t.integer  "user_id",                        null: false
-    t.string   "image_url",                      null: false
+    t.string   "name",                             null: false
+    t.integer  "price",                            null: false
+    t.boolean  "kitchen",          default: false
+    t.string   "number_of_room",                   null: false
+    t.string   "description",                      null: false
+    t.integer  "user_id",                          null: false
+    t.string   "image_url",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "tv",               default: false
+    t.boolean  "essentials",       default: false
+    t.boolean  "shampoo",          default: false
+    t.boolean  "heating",          default: false
+    t.boolean  "conditioning",     default: false
+    t.boolean  "washer",           default: false
+    t.boolean  "indoor_fireplace", default: false
+    t.boolean  "dryer",            default: false
+    t.boolean  "internet",         default: false
   end
 
   create_table "users", force: true do |t|

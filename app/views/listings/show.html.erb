@@ -20,7 +20,16 @@
 
   <div class="amenities">
     <ul>Amenities
-      <li>Kitchen: <%= @listing.kitchen %></li>
+      <li>Kitchen: <%= check_amenity @listing.kitchen %></li>
+      <li>TV: <%= check_amenity @listing.tv %></li>
+      <li>Internet: <%= check_amenity @listing.internet %></li>
+      <li>Essentials: <%= check_amenity @listing.essentials %></li>
+      <li>Shampoo: <%= check_amenity @listing.shampoo %></li>
+      <li>Heating: <%= check_amenity @listing.heating %></li>
+      <li>Air Conditioning: <%= check_amenity @listing.conditioning %></li>
+      <li>Washer: <%= check_amenity @listing.washer %></li>
+      <li>Dryer: <%= check_amenity @listing.dryer %></li>
+      <li>Indoor Fireplace: <%= check_amenity @listing.indoor_fireplace %></li>
     </ul>
   </div>
 
