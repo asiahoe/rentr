@@ -6,12 +6,12 @@ class ListingsController < ApplicationController
   end
 
   def create
-    listing = current_user.listings.build(listing_params)
+    @listing = current_user.listings.build(listing_params)
 
-    if listing.save
-      redirect_to listing
+    if @listing.save
+      redirect_to @listing
     else
-      redirect_to :back
+      render :new
     end
   end
 
@@ -40,7 +40,7 @@ class ListingsController < ApplicationController
   def destroy
     listing.destroy
 
-    redirect_to listings_path
+    redirect_to home_path
   end
 
   private
@@ -53,6 +53,7 @@ class ListingsController < ApplicationController
 
   def listing_params
     params.require(:listing).permit(
+<<<<<<< HEAD
     :name,
     :number_of_room,
     :kitchen,
@@ -68,6 +69,14 @@ class ListingsController < ApplicationController
     :price,
     :description,
     :image_url
+=======
+      :name,
+      :number_of_room,
+      :kitchen,
+      :price,
+      :description,
+      :image_url
+>>>>>>> Delete listing function takes you back to dashboard
     )
   end
 

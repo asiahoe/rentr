@@ -6,5 +6,12 @@ class ApplicationController < ActionController::Base
 
   def current_user
       super || Guest.new
+
+  def set_back_url
+    session[:back_link] = request.referer
+  end
+
+  def current_user
+      super || Guest.new
   end
 end

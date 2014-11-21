@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
+  before_action :set_back_url, only: [:new]
 
   def new
     @user = User.new
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
 
     if @user.valid?
       sign_in(@user)
-      redirect_to root_path
+      redirect_to session[:back_link]
     else
       render :new
     end
